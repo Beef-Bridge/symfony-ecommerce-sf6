@@ -85,6 +85,8 @@ docker-build: ## Build docker containers
 ## —— Composer ——
 composer-install: ## Install dependencies
 	$(EXEC_COMPOSER_CONTAINER) install --no-progress --prefer-dist --optimize-autoloader
+composer-dump-env: ## Dump env
+	$(EXEC_COMPOSER_CONTAINER) dump-env dev
 
 ## —— Database ——
 db-init: db-drop db-create db-migrate db-load-fixtures ## Init database with migration
