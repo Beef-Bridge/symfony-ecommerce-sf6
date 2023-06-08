@@ -26,6 +26,9 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
     \
     &&  pecl install apcu && docker-php-ext-enable apcu
 
+# Symfony CLI
+RUN wget https://get.symfony.com/cli/installer -O - | bash && mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
+
 # Default powerline10k theme, no plugins installed
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)"
 
